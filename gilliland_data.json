@@ -323,7 +323,8 @@
                         "y":[1.0,0.222,0.0]
                     },
                     "matplotlib":{
-                        "marker":"p"
+                        "marker":"p",
+                        "fillstyle":"none"
                     }
                 }
             }

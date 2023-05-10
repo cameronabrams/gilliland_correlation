@@ -8,6 +8,17 @@ def read_data(jfile):
     
 def make_plot(jdict,**kwargs):
     fig,ax=plt.subplots(1,2,figsize=kwargs.get('figsize',(12,6)))
+    SMALL_SIZE = 14
+    MEDIUM_SIZE = 18
+    BIGGER_SIZE = 24
+
+    plt.rc('font', size=SMALL_SIZE)          # controls default text sizes
+    plt.rc('axes', titlesize=BIGGER_SIZE)     # fontsize of the axes title
+    plt.rc('axes', labelsize=BIGGER_SIZE)    # fontsize of the x and y labels
+    plt.rc('xtick', labelsize=SMALL_SIZE)    # fontsize of the tick labels
+    plt.rc('ytick', labelsize=SMALL_SIZE)    # fontsize of the tick labels
+    plt.rc('legend', fontsize=SMALL_SIZE)    # legend fontsize
+    plt.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title    plt.rcParams.update({'font.size': 22})
     lin,log=ax
     lin.set_xlim([0,1])
     lin.set_ylim([0,1])
@@ -81,4 +92,5 @@ if __name__=='__main__':
         'Rusche':{'func':Rusche,'label':'Rusche(1999)','shortcode':'b:'},
         'DavisP3':{'func':DavisP3,'label':'Davis(2000)','shortcode':'g-'}
     }
-    make_plot(jd,fits=fits)
+    make_plot(jd,fits=fits,figsize=(18,9))
+    # print(Rusche(0.455),DavisP3(0.455))
